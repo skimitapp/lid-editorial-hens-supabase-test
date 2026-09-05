@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#efebe6">
+<title>LID Invitations — Editorial Hens Night Invite</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#efebe6;
+  --paper:#fffcf8;
+  --paper2:#faf5ef;
+  --ink:#171514;
+  --muted:#6a625d;
+  --line:#ddd2c8;
+  --dark:#171514;
+  --soft:#f6f0ea;
+  --shadow:0 22px 48px rgba(31,23,19,.10);
+  --hero-text:#f7f3ee;
+  --hero-kicker:#f7f3ee;
+  --hero-meta:#f1ebe5;
+  --hero-button-border:rgba(255,255,255,.6);
+  --hero-secondary-bg:rgba(255,255,255,.08);
+  --hero-logo:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f5f2ee 0%,var(--bg) 100%);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.app{max-width:560px;margin:0 auto;padding:14px 12px 98px}
+.invite{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  box-shadow:var(--shadow);
+}
+.hero{
+  position:relative;
+  min-height:650px;
+  display:flex;
+  align-items:stretch;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(10,10,12,.10) 0%,rgba(10,10,12,.28) 100%),
+    url("editorial-hens-final-hero.png") center center/cover no-repeat;
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(0,0,0,.08) 100%);
+  pointer-events:none;
+}
+.topbar{
+  position:absolute;
+  z-index:5;
+  left:0;right:0;top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+}
+.private{
+  margin-left:auto;
+  font-size:10px;
+  background:rgba(255,255,255,.90);
+  color:#4d4844;
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:999px;
+  padding:8px 10px;
+  backdrop-filter:blur(10px);
+}
+.heroGrid{
+  position:relative;
+  z-index:3;
+  width:100%;
+  display:grid;
+  grid-template-columns:48% 52%;
+  min-height:650px;
+}
+.heroContentWrap{
+  display:flex;
+  align-items:stretch;
+  justify-content:flex-start;
+  padding:78px 18px 22px 18px;
+}
+.heroContent{
+  width:min(100%, 250px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-align:left;
+  color:var(--hero-text);
+}
+.heroTop{}
+.kicker{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:74px;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  line-height:.92;
+  margin:0 0 14px;
+  color:var(--hero-kicker);
+}
+.subkicker{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:14px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:1.05;
+  margin-bottom:16px;
+  color:var(--hero-kicker);
+}
+.names{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:31px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:.98;
+  font-weight:400;
+  margin:0 0 10px;
+}
+.metaBlock{margin-top:0}
+.dateLine{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:16px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:1.05;
+  margin-bottom:6px;
+  color:var(--hero-meta);
+}
+.venueLine{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--hero-meta);
+  line-height:1.15;
+}
+.heroBtns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  width:100%;
+  margin-top:18px;
+}
+.heroBtn{
+  border-radius:8px;
+  min-height:46px;
+  padding:10px 12px;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:400;
+}
+.heroBtn.primary{border:1px solid var(--hero-button-border);background:rgba(0,0,0,.18);color:#fff}
+.heroBtn.secondary{border:0;background:#f4efe8;color:#171514}
+
+.hero.text-black{
+  --hero-text:#171514;
+  --hero-kicker:#171514;
+  --hero-meta:#2d2824;
+  --hero-button-border:rgba(23,21,20,.42);
+}
+.hero.text-white{
+  --hero-text:#ffffff;
+  --hero-kicker:#f7f3ee;
+  --hero-meta:#f1ebe5;
+  --hero-button-border:rgba(255,255,255,.60);
+}
+.infoStrip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,252,248,.98);
+}
+.info{text-align:center;padding:22px 8px 19px;border-right:1px solid var(--line)}
+.info:last-child{border-right:0}
+.symbol{display:none;}
+.info strong{
+  display:block;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+  font-weight:400;
+}
+.info span{
+  display:block;
+  font-size:11px;
+  line-height:1.45;
+  color:#4d4844;
+}
+.message{
+  padding:28px 26px 26px;
+  text-align:center;
+  background:var(--paper);
+}
+.messageKicker{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:14px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#171514;
+  margin-bottom:10px;
+}
+.messageHeart{font-size:16px;color:#877f78;margin-bottom:10px}
+.message p{margin:0 auto;max-width:370px;font-size:13px;line-height:1.6}
+.rsvpLine{display:inline-block;margin-top:4px}
+.signature{
+  margin-top:10px;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:18px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#171514;
+}
+.rsvpWrap{padding:18px;border-top:1px solid var(--line);background:var(--paper2)}
+.rsvpCard{
+  display:grid;
+  grid-template-columns:minmax(0,1.65fr) minmax(150px,.75fr);
+  gap:14px;
+  border:1px solid var(--line);
+  border-radius:0;
+  background:#fff;
+  padding:16px;
+}
+.rsvpMain h2{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:32px;
+  font-weight:400;
+  margin:0 0 3px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.rsvpSub{font-size:10px;color:var(--muted);margin-bottom:14px}
+.field{margin-bottom:11px}
+label{
+  display:block;
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:900;
+  margin-bottom:6px;
+  color:#645d58;
+}
+input,textarea,select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#fff;
+  padding:10px 11px;
+  font-size:11px;
+  color:var(--ink);
+  outline:none;
+}
+textarea{resize:vertical}
+.choiceRow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.choice{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:11px;
+  padding:10px;
+  font-size:10px;
+  font-weight:700;
+  color:#2e2b28;
+}
+.choice.active{border-color:#92867e;background:#faf6f2}
+.checkline{display:flex;align-items:center;gap:8px;font-size:10px;color:#5d5752;margin:-1px 0 12px}
+.checkline input{width:auto}
+.submit{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  background:#171514;
+  color:#fff;
+  padding:12px;
+  font-size:10px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+.success{display:none;margin-top:10px;background:#edf6ee;color:#48604d;border-radius:10px;padding:10px;font-size:10px}
+.sideDetails{border-left:1px solid var(--line);padding-left:14px}
+.sideTitle{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  color:#171514;
+}
+.sideItem{padding:10px 0;border-top:1px solid #eee5de}
+.sideItem:first-of-type{border-top:0}
+.sideItem strong{
+  display:block;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+  font-weight:400;
+}
+.sideItem span{display:block;font-size:10px;line-height:1.45;color:#514b47}
+.sideNote{
+  margin-top:12px;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:14px;
+  line-height:1.35;
+  text-align:center;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#5b514b;
+}
+.footer{
+  text-align:center;
+  padding:14px 18px 22px;
+  border-top:1px solid var(--line);
+  font-size:9px;
+  color:var(--muted);
+  background:var(--paper);
+}
+.floating{
+  position:fixed;
+  z-index:30;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(536px,calc(100% - 24px));
+  display:flex;
+  justify-content:space-between;
+  pointer-events:none;
+}
+.floatBtn{
+  pointer-events:auto;
+  width:64px;height:64px;
+  border:0;
+  border-radius:50%;
+  background:rgba(38,35,33,.72);
+  color:#fff;
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(0,0,0,.17);
+  font-size:12px;
+  font-weight:800;
+}
+.drawer{
+  position:fixed;
+  inset:0;
+  z-index:60;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  padding:12px;
+  background:rgba(20,18,17,.48);
+}
+.drawer.open{display:flex}
+.sheet{
+  width:min(560px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--bg);
+  border-radius:28px 28px 18px 18px;
+  padding:18px;
+}
+.sheetHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sheetHead h3{
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:24px;
+  font-weight:400;
+  margin:0;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.close{border:0;background:#fff;border-radius:50%;width:34px;height:34px}
+.editorNote{font-size:10px;line-height:1.5;color:var(--muted);margin:-2px 0 14px}
+.editorGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.editorGrid .field.full{grid-column:1/-1}
+.previewImg{display:none;width:100%;height:140px;object-fit:cover;border-radius:12px;margin-top:7px}
+.save{
+  width:100%;
+  border:0;
+  border-radius:12px;
+  background:#171514;
+  color:#fff;
+  padding:12px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.shareRow{display:flex;gap:7px}
+.shareRow input{font-size:9px}
+.shareRow button{border:0;background:#171514;color:#fff;border-radius:11px;padding:0 12px;font-size:10px;font-weight:800}
+.giftAction{
+  display:inline-block;
+  margin-top:6px;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:9px;
+  font-weight:800;
+  text-decoration:none;
+  color:var(--ink);
+  background:#fff;
+}
+.hidden{display:none!important}
+.manageBtn{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  padding:11px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:10px;
+}
+.dashboardStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat{border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px;text-align:center}
+.stat strong{
+  display:block;
+  font-family:Anton, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:24px;
+  font-weight:400;
+  margin-bottom:3px;
+}
+.stat span{font-size:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.responseList{display:grid;gap:8px}
+.response{border:1px solid var(--line);border-radius:14px;background:#fff;padding:11px;font-size:10px;line-height:1.5}
+.response strong{display:block;font-size:11px;margin-bottom:2px}
+.responseMeta{color:var(--muted)}
+@media(max-width:470px){
+  .hero{min-height:680px}
+  .heroGrid{grid-template-columns:1fr;min-height:680px}
+  .heroContentWrap{align-items:flex-end;padding:84px 18px 22px}
+  .heroContent{width:100%;max-width:310px;min-height:560px}
+  .kicker{font-size:74px}
+  .subkicker{font-size:13px}
+  .names{font-size:28px}
+  .dateLine{font-size:15px}
+  .venueLine{font-size:12px}
+  .heroBtns{grid-template-columns:1fr 1fr}
+  .infoStrip{grid-template-columns:repeat(3,1fr)}
+  .info:nth-child(3){border-right:0}
+  .rsvpCard{grid-template-columns:1fr}
+  .sideDetails{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
+  .editorGrid{grid-template-columns:1fr}
+  .editorGrid .field.full{grid-column:auto}
+}
+
+
+/* Supabase host access — functionality only; invitation design remains unchanged */
+.hostOnly{display:none}
+.authGate{position:fixed;inset:0;z-index:120;background:rgba(239,235,230,.96);display:none;align-items:center;justify-content:center;padding:22px}
+.authGate.open{display:flex}
+.authCard{width:min(420px,100%);background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}
+.authCard h3{margin:0 0 6px;font-family:Anton,Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:28px;letter-spacing:.03em;text-transform:uppercase;font-weight:400}
+.authCard p{margin:0 0 18px;color:var(--muted);font-size:12px;line-height:1.55}
+.authCard .field{margin-bottom:12px}
+.authCard .authError{display:none;margin-top:10px;font-size:11px;color:#8a2d2d}
+.authCard .authActions{display:flex;gap:8px;margin-top:8px}
+.authCard .authActions button{flex:1;border:0;border-radius:10px;padding:12px 14px;font-weight:800}
+.authCard .authPrimary{background:#171514;color:#fff}
+.authCard .authSecondary{background:#f3eee8;color:#171514}
+.syncStatus{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);z-index:110;background:#171514;color:#fff;border-radius:999px;padding:8px 12px;font-size:10px;letter-spacing:.04em;display:none;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.syncStatus.show{display:block}
+
+</style>
+</head>
+<body>
+<div class="app">
+<article class="invite">
+
+  <section class="hero text-white" id="hero">
+    <div class="topbar">
+      <div></div>
+      <div class="private">Private invite</div>
+    </div>
+
+    <div class="heroGrid">
+      <div class="heroContentWrap">
+        <div class="heroContent">
+          <div class="heroTop">
+            <div class="kicker" id="heroHeadline">SHE’S<br>GETTING<br>MARRIED</div>
+            <div class="subkicker" id="heroSubhead">COME CELEBRATE AT THE HENS NIGHT</div>
+          </div>
+
+          <div>
+            <h1 class="names"><span id="firstName">MADDIE’S HENS</span><span id="secondName" style="display:none"></span></h1>
+            <div class="metaBlock">
+              <div class="dateLine" id="heroDate">SATURDAY 7 FEBRUARY</div>
+              <div class="venueLine" id="heroVenue">7PM · BAR BAMBINO · MELBOURNE</div>
+            </div>
+            <div class="heroBtns">
+            <button class="heroBtn secondary" onclick="document.getElementById('details').scrollIntoView({behavior:'smooth'})">VIEW DETAILS</button>
+            <button class="heroBtn primary" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">RSVP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <section class="infoStrip" id="details">
+    <div class="info">
+      
+      <strong id="labelDate">Date</strong>
+      <span id="detailDate">Saturday 7 February<br>2027</span>
+    </div>
+    <div class="info">
+      
+      <strong id="labelVenue">Venue</strong>
+      <span id="detailVenue">Bar Bambino<br>Melbourne</span>
+    </div>
+    <div class="info">
+      
+      <strong id="labelParty">Party starts</strong>
+      <span id="detailCeremony">7:00 PM<br>Cocktails, dancing & a night for the girls</span>
+    </div>
+  </section>
+
+  <section class="message">
+    <div class="messageKicker" id="messageKicker">THE NIGHT</div>
+    <div class="messageHeart">♡</div>
+    <p id="messageText">Cocktails, dancing & a night for the girls.<br><span class="rsvpLine">Please RSVP by 24 January 2027.</span></p>
+    <div class="signature" id="signatureText">MADDIE’S HENS</div>
+  </section>
+
+  <section class="rsvpWrap" id="rsvp">
+    <div class="rsvpCard">
+      <div class="rsvpMain">
+        <h2>RSVP</h2>
+        <div class="rsvpSub">Please let us know if you’ll be joining us.</div>
+
+        <div class="field">
+          <label>Your name</label>
+          <input id="guestName" placeholder="e.g. Sarah Jones">
+        </div>
+
+        <div class="field">
+          <label>Will you be attending?</label>
+          <div class="choiceRow">
+            <button class="choice active" data-rsvp="yes">Yes, can’t wait!</button>
+            <button class="choice" data-rsvp="no">Sorry, can’t make it</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Dietary requirements</label>
+          <input id="dietary" placeholder="e.g. Vegetarian, Gluten free, Allergies">
+        </div>
+
+        <div class="checkline">
+          <input id="plusOne" type="checkbox">
+          <span>I will be bringing a plus one</span>
+        </div>
+
+        <button class="submit" id="submitRsvp">Submit RSVP</button>
+        <div class="success" id="success">Your response has been received.</div>
+      </div>
+
+      <aside class="sideDetails">
+        <div class="sideTitle" id="sideTitle">THE DETAILS</div>
+        <div class="sideItem">
+          <strong id="dressCodeLabel">Dress code</strong>
+          <span id="dressCode">Party Chic</span>
+        </div>
+        <div class="sideItem">
+          <strong id="afterPartyLabel">The vibe</strong>
+          <span id="afterParty">Good drinks. Good music. Good people. Come ready to celebrate.</span>
+        </div>
+        <div class="sideItem" id="giftSection">
+          <strong id="giftTitle">Gifts</strong>
+          <span id="giftNote">No gifts needed — just bring yourself.</span>
+          <a id="giftLinkButton" class="giftAction hidden" href="#" target="_blank" rel="noopener">View gift details</a>
+        </div>
+        <div class="sideNote" id="sideNote">ONE LAST NIGHT BEFORE THE BIG DAY.</div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">Share this private invite directly with your guests.<br><span style="display:inline-block;margin-top:6px;letter-spacing:.16em;text-transform:uppercase;">LID Invitations</span></footer>
+</article>
+</div>
+
+<div class="floating hostOnly" id="hostControls">
+  <button class="floatBtn" id="editBtn">Edit</button>
+  <button class="floatBtn" id="shareBtn">Share</button>
+</div>
+
+<div class="drawer" id="editDrawer">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h3>Edit invitation</h3>
+      <button class="close" data-close="editDrawer">×</button>
+    </div>
+    <div class="editorNote">Update the wording, upload your own hero photo if needed, and switch between white or black hero text depending on your image. Changes save securely to your LID Invitations account.</div>
+
+    <div class="editorGrid">
+      <div class="field full">
+        <label>Hero headline</label>
+        <textarea id="editHeroHeadline" rows="3">SHE’S
+GETTING
+MARRIED</textarea>
+      </div>
+      <div class="field full">
+        <label>Hero subhead</label>
+        <input id="editHeroSubhead" value="COME CELEBRATE AT THE HENS NIGHT">
+      </div>
+
+      <div class="field">
+        <label>Event name</label>
+        <input id="editFirst" value="MADDIE’S HENS">
+      </div>
+      <div class="field" style="display:none">
+        <label>Second name</label>
+        <input id="editSecond" value="">
+      </div>
+
+      <div class="field">
+        <label>Hero date</label>
+        <input id="editHeroDate" value="SATURDAY 7 FEBRUARY">
+      </div>
+      <div class="field">
+        <label>Hero venue line</label>
+        <input id="editHeroVenue" value="7PM · BAR BAMBINO · MELBOURNE">
+      </div>
+
+      <div class="field full">
+        <label>Detail date</label>
+        <input id="editDetailDate" value="Saturday 7 February|2027">
+      </div>
+      <div class="field full">
+        <label>Detail venue</label>
+        <input id="editVenueFull" value="Bar Bambino|Melbourne">
+      </div>
+
+      <div class="field full">
+        <label>Party starts</label>
+        <input id="editPartyStart" value="7:00 PM · Cocktails, dancing & a night for the girls">
+      </div>
+      <div class="field full">
+        <label>Message kicker</label>
+        <input id="editMessageKicker" value="THE NIGHT">
+      </div>
+      <div class="field full">
+        <label>Message</label>
+        <textarea id="editMessage" rows="3">Cocktails, dancing & a night for the girls.
+Please RSVP by 24 January 2027.</textarea>
+      </div>
+
+      <div class="field">
+        <label>Dress code</label>
+        <input id="editDress" value="Party Chic">
+      </div>
+      <div class="field">
+        <label>Gift note</label>
+        <input id="editGift" value="No gifts needed — just bring yourself.">
+      </div>
+      <div class="field">
+        <label>Gift type</label>
+        <select id="giftType">
+          <option value="none">No gift link</option>
+          <option value="registry">Gift registry</option>
+          <option value="wishing">Wishing well / honeymoon fund</option>
+          <option value="custom">Custom gift link</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label>Gift link</label>
+        <input id="editGiftLink" type="url" placeholder="https://...">
+      </div>
+
+      <div class="field">
+        <label>Accommodation link</label>
+        <input id="editAccommodation" type="url" placeholder="Optional">
+      </div>
+
+      <div class="field">
+        <label>Directions link</label>
+        <input id="editDirections" type="url" placeholder="Optional">
+      </div>
+
+      <div class="field full">
+        <label>The vibe / side note</label>
+        <textarea id="editAfter" rows="2">Good drinks. Good music. Good people. Come ready to celebrate.</textarea>
+      </div>
+      <div class="field full">
+        <label>Bottom side slogan</label>
+        <input id="editSideNote" value="ONE LAST NIGHT BEFORE THE BIG DAY.">
+      </div>
+
+      <div class="field">
+        <label>Hero text colour</label>
+        <select id="heroTextColor">
+          <option value="white" selected>White</option>
+          <option value="black">Black</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label>Your own hero photo</label>
+        <input id="imageInput" type="file" accept="image/*">
+        <img id="previewImg" class="previewImg" alt="Hero photo preview">
+      </div>
+    </div>
+
+    <button class="save" id="saveBtn">Save changes</button>
+  </div>
+</div>
+
+<div class="drawer" id="shareDrawer">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h3>Share invitation</h3>
+      <button class="close" data-close="shareDrawer">×</button>
+    </div>
+    <div class="editorNote">This is your unique guest invitation link.</div>
+    <div class="shareRow">
+      <input id="shareLink" readonly value="https://lidinvitations.com/hens/maddies-hens-2027">
+      <button id="copyBtn">Copy</button>
+    </div>
+    <button class="manageBtn" id="manageBtn">Manage RSVPs</button>
+  </div>
+</div>
+
+<div class="drawer" id="manageDrawer">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h3>Manage RSVPs</h3>
+      <button class="close" data-close="manageDrawer">×</button>
+    </div>
+    <div class="editorNote">Private host view. Guests never see this screen.</div>
+
+    <div class="dashboardStats">
+      <div class="stat"><strong id="statTotal">0</strong><span>Responses</span></div>
+      <div class="stat"><strong id="statYes">0</strong><span>Attending</span></div>
+      <div class="stat"><strong id="statNo">0</strong><span>Declined</span></div>
+    </div>
+
+    <div class="responseList" id="responseList">
+      <div class="editorNote">No RSVPs yet.</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="authGate" id="authGate">
+  <div class="authCard">
+    <h3>Host login</h3>
+    <p>Sign in to edit this invitation, upload the hero image, share the guest link and manage RSVPs.</p>
+    <div class="field"><label>Email</label><input id="hostEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+    <div class="field"><label>Password</label><input id="hostPassword" type="password" autocomplete="current-password" placeholder="Password"></div>
+    <div class="authActions">
+      <button class="authPrimary" id="hostLoginBtn">Sign in</button>
+      <button class="authSecondary" id="hostCancelBtn">View invite</button>
+    </div>
+    <div class="authError" id="authError"></div>
+  </div>
+</div>
+<div class="syncStatus" id="syncStatus">Saved</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const $ = s => document.querySelector(s);
+const SUPABASE_URL = 'https://wjzlfksfcinkninqhzxg.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_jpPRMQbvyqwhGu6oSGEoWw_2GJvPLWn';
+const TEMPLATE_SLUG = 'editorial-hens-night';
+const STORAGE_BUCKET = 'invitation-images';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const defaultSettings = {
+  heroHeadline: 'SHE’S\nGETTING\nMARRIED',
+  heroSubhead: 'COME CELEBRATE AT THE HENS NIGHT',
+  firstName: 'MADDIE’S HENS', secondName: '',
+  heroDate: 'SATURDAY 7 FEBRUARY', heroVenue: '7PM · BAR BAMBINO · MELBOURNE',
+  detailDate: 'Saturday 7 February|2027', venueFull: 'Bar Bambino|Melbourne',
+  partyStart: '7:00 PM · Cocktails, dancing & a night for the girls',
+  messageKicker: 'THE NIGHT',
+  message: 'Cocktails, dancing & a night for the girls.\nPlease RSVP by 24 January 2027.',
+  dress: 'Party Chic', gift: 'No gifts needed — just bring yourself.', giftType: 'none', giftLink: '',
+  accommodationLink: '', directionsLink: '',
+  after: 'Good drinks. Good music. Good people. Come ready to celebrate.',
+  sideNote: 'ONE LAST NIGHT BEFORE THE BIG DAY.', heroTextColor: 'white'
+};
+
+let settings = {...defaultSettings};
+let attendance = 'yes';
+let invitation = null;
+let currentUser = null;
+let isHost = false;
+let pendingHeroFile = null;
+let heroObjectUrl = null;
+let rsvpResponses = [];
+
+function showStatus(text){
+  const el=$('#syncStatus'); el.textContent=text; el.classList.add('show');
+  clearTimeout(showStatus._t); showStatus._t=setTimeout(()=>el.classList.remove('show'),1600);
+}
+function linesToHtml(text=''){
+  const lines=String(text).split(/\n+/).filter(Boolean);
+  return lines.map((line,i)=>i===0?escapeHtml(line):`<br><span class="rsvpLine">${escapeHtml(line)}</span>`).join('');
+}
+function splitPipeOrFallback(value=''){
+  const parts=String(value).split('|').map(s=>s.trim()).filter(Boolean); return parts.join('<br>');
+}
+function splitTimeText(value=''){
+  const parts=String(value).split('·').map(s=>s.trim()).filter(Boolean);
+  return parts.length>1?`${escapeHtml(parts[0])}<br>${escapeHtml(parts.slice(1).join(' · '))}`:escapeHtml(value);
+}
+function updateGiftButton(){
+  const b=$('#giftLinkButton');
+  if(settings.giftType!=='none'&&settings.giftLink){
+    $('#giftTitle').textContent=settings.giftType==='registry'?'Gift registry':settings.giftType==='wishing'?'Wishing well':'Gifts';
+    b.href=settings.giftLink; b.textContent=settings.giftType==='registry'?'View registry':settings.giftType==='wishing'?'View wishing well':'View gift details'; b.classList.remove('hidden');
+  }else{ $('#giftTitle').textContent='Gifts'; b.classList.add('hidden'); b.removeAttribute('href'); }
+}
+function guestShareUrl(){
+  if(!invitation) return location.href;
+  const u=new URL(location.href); u.search=''; u.hash=''; u.searchParams.set('slug', invitation.public_slug); return u.toString();
+}
+async function loadHeroImage(){
+  if(heroObjectUrl){ URL.revokeObjectURL(heroObjectUrl); heroObjectUrl=null; }
+  if(!invitation?.hero_image_path){
+    $('#hero').style.backgroundImage=''; $('#previewImg').removeAttribute('src'); $('#previewImg').style.display='none'; return;
+  }
+  const {data,error}=await supabaseClient.storage.from(STORAGE_BUCKET).download(invitation.hero_image_path);
+  if(error){ console.warn('Hero download:',error.message); return; }
+  heroObjectUrl=URL.createObjectURL(data);
+  $('#hero').style.backgroundImage=`linear-gradient(180deg,rgba(10,10,12,.10) 0%,rgba(10,10,12,.28) 100%), url("${heroObjectUrl}")`;
+  $('#previewImg').src=heroObjectUrl; $('#previewImg').style.display='block';
+}
+function applySettings(){
+  $('#heroHeadline').innerHTML=escapeHtml(settings.heroHeadline).replace(/\n/g,'<br>');
+  $('#heroSubhead').textContent=settings.heroSubhead; $('#firstName').textContent=settings.firstName; $('#secondName').textContent=settings.secondName;
+  $('#heroDate').textContent=settings.heroDate; $('#heroVenue').textContent=settings.heroVenue;
+  $('#detailDate').innerHTML=splitPipeOrFallback(settings.detailDate); $('#detailVenue').innerHTML=splitPipeOrFallback(settings.venueFull); $('#detailCeremony').innerHTML=splitTimeText(settings.partyStart);
+  $('#messageKicker').textContent=settings.messageKicker; $('#messageText').innerHTML=linesToHtml(settings.message);
+  $('#signatureText').textContent=settings.secondName?`${settings.firstName} + ${settings.secondName}`:settings.firstName;
+  $('#dressCode').textContent=settings.dress; $('#giftNote').textContent=settings.gift; $('#afterParty').textContent=settings.after; $('#sideNote').textContent=settings.sideNote;
+  $('#hero').classList.remove('text-white','text-black'); $('#hero').classList.add(settings.heroTextColor==='black'?'text-black':'text-white');
+  $('#shareLink').value=guestShareUrl(); updateGiftButton();
+}
+function populateForm(){
+  $('#editHeroHeadline').value=settings.heroHeadline; $('#editHeroSubhead').value=settings.heroSubhead; $('#editFirst').value=settings.firstName; $('#editSecond').value=settings.secondName;
+  $('#editHeroDate').value=settings.heroDate; $('#editHeroVenue').value=settings.heroVenue; $('#editDetailDate').value=settings.detailDate; $('#editVenueFull').value=settings.venueFull;
+  $('#editPartyStart').value=settings.partyStart; $('#editMessageKicker').value=settings.messageKicker; $('#editMessage').value=settings.message; $('#editDress').value=settings.dress; $('#editGift').value=settings.gift;
+  $('#giftType').value=settings.giftType; $('#editGiftLink').value=settings.giftLink; $('#editAccommodation').value=settings.accommodationLink; $('#editDirections').value=settings.directionsLink;
+  $('#editAfter').value=settings.after; $('#editSideNote').value=settings.sideNote; $('#heroTextColor').value=settings.heroTextColor;
+}
+function readForm(){
+  return {...settings,
+    heroHeadline:$('#editHeroHeadline').value.trim()||defaultSettings.heroHeadline, heroSubhead:$('#editHeroSubhead').value.trim()||defaultSettings.heroSubhead,
+    firstName:$('#editFirst').value.trim()||defaultSettings.firstName, secondName:$('#editSecond').value.trim(), heroDate:$('#editHeroDate').value.trim()||defaultSettings.heroDate,
+    heroVenue:$('#editHeroVenue').value.trim()||defaultSettings.heroVenue, detailDate:$('#editDetailDate').value.trim()||defaultSettings.detailDate,
+    venueFull:$('#editVenueFull').value.trim()||defaultSettings.venueFull, partyStart:$('#editPartyStart').value.trim()||defaultSettings.partyStart,
+    messageKicker:$('#editMessageKicker').value.trim()||defaultSettings.messageKicker, message:$('#editMessage').value.trim()||defaultSettings.message,
+    dress:$('#editDress').value.trim()||defaultSettings.dress, gift:$('#editGift').value.trim()||defaultSettings.gift, giftType:$('#giftType').value,
+    giftLink:$('#editGiftLink').value.trim(), accommodationLink:$('#editAccommodation').value.trim(), directionsLink:$('#editDirections').value.trim(),
+    after:$('#editAfter').value.trim()||defaultSettings.after, sideNote:$('#editSideNote').value.trim()||defaultSettings.sideNote, heroTextColor:$('#heroTextColor').value
+  };
+}
+async function uploadPendingHero(){
+  if(!pendingHeroFile||!currentUser||!invitation) return invitation?.hero_image_path||null;
+  const ext=(pendingHeroFile.name.split('.').pop()||'jpg').toLowerCase();
+  const path=`${currentUser.id}/${invitation.id}/hero-${Date.now()}.${ext}`;
+  const {error}=await supabaseClient.storage.from(STORAGE_BUCKET).upload(path,pendingHeroFile,{upsert:false,contentType:pendingHeroFile.type});
+  if(error) throw error;
+  if(invitation.hero_image_path) await supabaseClient.storage.from(STORAGE_BUCKET).remove([invitation.hero_image_path]).catch(()=>{});
+  pendingHeroFile=null; return path;
+}
+async function saveInvitation(){
+  if(!isHost||!invitation) return;
+  $('#saveBtn').disabled=true; $('#saveBtn').textContent='Saving…';
+  try{
+    settings=readForm(); const heroPath=await uploadPendingHero();
+    const {data,error}=await supabaseClient.from('invitations').update({title:settings.firstName,content:settings,settings:{heroTextColor:settings.heroTextColor},hero_image_path:heroPath}).eq('id',invitation.id).select().single();
+    if(error) throw error; invitation=data; applySettings(); await loadHeroImage(); $('#editDrawer').classList.remove('open'); showStatus('Saved');
+  }catch(e){ alert('Could not save: '+e.message); }
+  finally{ $('#saveBtn').disabled=false; $('#saveBtn').textContent='Save changes'; }
+}
+async function loadHostInvitation(){
+  const {data,error}=await supabaseClient.from('invitations').select('*, templates!inner(slug)').eq('owner_id',currentUser.id).eq('templates.slug',TEMPLATE_SLUG).order('created_at',{ascending:false}).limit(1).maybeSingle();
+  if(error) throw error; if(!data) throw new Error('No Editorial Hens Night invitation is assigned to this account.');
+  invitation=data; settings={...defaultSettings,...(data.content||{})}; isHost=true; document.querySelectorAll('.hostOnly').forEach(el=>el.style.display='flex');
+  applySettings(); populateForm(); await loadHeroImage(); await loadRsvps();
+}
+async function loadPublicInvitation(slug){
+  const {data,error}=await supabaseClient.from('invitations').select('*').eq('public_slug',slug).eq('is_published',true).maybeSingle();
+  if(error) throw error; if(!data) throw new Error('This invitation is not available yet.');
+  invitation=data; settings={...defaultSettings,...(data.content||{})}; isHost=false; document.querySelectorAll('.hostOnly').forEach(el=>el.style.display='none');
+  applySettings(); populateForm(); await loadHeroImage();
+}
+async function publishInvitation(){
+  if(!isHost||!invitation) return;
+  if(!invitation.is_published){
+    const {data,error}=await supabaseClient.from('invitations').update({is_published:true}).eq('id',invitation.id).select().single();
+    if(error) throw error; invitation=data; applySettings(); showStatus('Invitation published');
+  }
+}
+async function loadRsvps(){
+  if(!isHost||!invitation) return;
+  const {data,error}=await supabaseClient.from('rsvps').select('*').eq('invitation_id',invitation.id).order('created_at',{ascending:false});
+  if(error){ console.warn(error.message); return; } rsvpResponses=data||[]; renderDashboard();
+}
+function decodeRsvpMessage(r){
+  try{ const x=JSON.parse(r.message||'{}'); return {dietary:x.dietary||'',plusOne:!!x.plusOne}; }catch{return {dietary:r.message||'',plusOne:(r.guest_count||1)>1};}
+}
+async function submitRsvp(){
+  const name=$('#guestName').value.trim(); if(!name){$('#guestName').focus();return;} if(!invitation){return;}
+  $('#submitRsvp').disabled=true; $('#submitRsvp').textContent='Submitting…';
+  try{
+    const plusOne=$('#plusOne').checked; const dietary=$('#dietary').value.trim();
+    const {error}=await supabaseClient.from('rsvps').insert({invitation_id:invitation.id,guest_name:name,attendance_status:attendance,guest_count:plusOne?2:1,message:JSON.stringify({dietary,plusOne})});
+    if(error) throw error;
+    $('#success').style.display='block'; $('#success').textContent=attendance==='yes'?`Thanks ${name} — your RSVP has been received.`:`Thanks ${name} — your response has been received.`;
+    $('#guestName').value=''; $('#dietary').value=''; $('#plusOne').checked=false; if(isHost) await loadRsvps();
+  }catch(e){ alert('Could not submit RSVP: '+e.message); }
+  finally{ $('#submitRsvp').disabled=false; $('#submitRsvp').textContent='Submit RSVP'; }
+}
+function renderDashboard(){
+  const total=rsvpResponses.length, yes=rsvpResponses.filter(r=>r.attendance_status==='yes').length, no=rsvpResponses.filter(r=>r.attendance_status==='no').length;
+  $('#statTotal').textContent=total; $('#statYes').textContent=yes; $('#statNo').textContent=no;
+  if(!total){$('#responseList').innerHTML='<div class="editorNote">No RSVPs yet.</div>';return;}
+  $('#responseList').innerHTML=rsvpResponses.map(r=>{const extra=decodeRsvpMessage(r);return `<div class="response"><strong>${escapeHtml(r.guest_name)}</strong><div class="responseMeta">${r.attendance_status==='yes'?'Attending':'Not attending'}${extra.plusOne?' · +1':''}</div>${extra.dietary?`<div class="responseMeta">Dietary: ${escapeHtml(extra.dietary)}</div>`:''}<div class="responseMeta">Submitted: ${new Date(r.created_at).toLocaleString()}</div></div>`}).join('');
+}
+function escapeHtml(value=''){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]);}
+
+// UI events
+document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));btn.classList.add('active');attendance=btn.dataset.rsvp;}));
+$('#submitRsvp').addEventListener('click',submitRsvp);
+$('#editBtn').addEventListener('click',()=>$('#editDrawer').classList.add('open'));
+$('#shareBtn').addEventListener('click',async()=>{try{await publishInvitation();$('#shareLink').value=guestShareUrl();$('#shareDrawer').classList.add('open');}catch(e){alert('Could not publish invitation: '+e.message);}});
+document.querySelectorAll('[data-close]').forEach(btn=>btn.addEventListener('click',()=>$('#'+btn.dataset.close).classList.remove('open')));
+document.querySelectorAll('.drawer').forEach(drawer=>drawer.addEventListener('click',e=>{if(e.target===drawer)drawer.classList.remove('open');}));
+$('#imageInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;pendingHeroFile=file;const local=URL.createObjectURL(file);$('#previewImg').src=local;$('#previewImg').style.display='block';});
+$('#saveBtn').addEventListener('click',saveInvitation);
+$('#manageBtn').addEventListener('click',async()=>{await loadRsvps();$('#shareDrawer').classList.remove('open');$('#manageDrawer').classList.add('open');});
+$('#copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#shareLink').value);}catch(e){}$('#copyBtn').textContent='Copied';setTimeout(()=>$('#copyBtn').textContent='Copy',1300);});
+$('#hostLoginBtn').addEventListener('click',async()=>{
+  $('#authError').style.display='none'; const email=$('#hostEmail').value.trim(), password=$('#hostPassword').value;
+  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+  if(error){$('#authError').textContent=error.message;$('#authError').style.display='block';return;}
+  currentUser=data.user; $('#authGate').classList.remove('open'); try{await loadHostInvitation();}catch(e){alert(e.message);}
+});
+$('#hostPassword').addEventListener('keydown',e=>{if(e.key==='Enter')$('#hostLoginBtn').click();});
+$('#hostCancelBtn').addEventListener('click',()=>$('#authGate').classList.remove('open'));
+
+async function init(){
+  applySettings(); populateForm();
+  const slug=new URLSearchParams(location.search).get('slug');
+  if(slug){
+    try{await loadPublicInvitation(slug);}catch(e){document.body.innerHTML=`<div style="font-family:Inter,sans-serif;padding:40px;text-align:center">${escapeHtml(e.message)}</div>`;}
+    return;
+  }
+  const {data:{session}}=await supabaseClient.auth.getSession();
+  if(session?.user){currentUser=session.user;try{await loadHostInvitation();}catch(e){alert(e.message);}}
+  else{$('#authGate').classList.add('open');}
+}
+init();
+</script>
+
+</body>
+</html>
