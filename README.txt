@@ -32,3 +32,5 @@ Security:
 - Only the Supabase publishable browser key is included in index.html.
 - No service-role key, database password, or secret key is included.
 - Database and Storage access rely on RLS policies.
+
+Deployment trigger
