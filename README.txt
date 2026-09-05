@@ -33,4 +33,4 @@ Security:
 - No service-role key, database password, or secret key is included.
 - Database and Storage access rely on RLS policies.
 
-Deployment trigger
+Deployment trigger 2
